@@ -1,4 +1,4 @@
-package noosphere.ischool.redditapp
+package com.dudencov.redditapp
 
 import org.junit.Test
 

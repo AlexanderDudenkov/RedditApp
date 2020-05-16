@@ -1,4 +1,4 @@
-package noosphere.ischool.redditapp
+package com.dudencov.redditapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
