@@ -1,3 +1,5 @@
 package com.dudencov.redditapp.repository.local
 
-class LocalRepoImpl : LocalRepo
+import javax.inject.Inject
+
+class LocalRepoImpl @Inject constructor() : LocalRepo

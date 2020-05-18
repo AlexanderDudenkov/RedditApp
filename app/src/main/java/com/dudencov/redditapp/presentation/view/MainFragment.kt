@@ -5,18 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.dudencov.redditapp.R
-import com.dudencov.redditapp.domain.TopListInteractor
-import com.dudencov.redditapp.domain.mappers.DataAndModelTopListMapperImpl
-import com.dudencov.redditapp.presentation.App
+import com.dudencov.redditapp.di.components.DaggerMainFragmentComponent
+import com.dudencov.redditapp.di.components.MainFragmentComponent
+import com.dudencov.redditapp.di.components.injector
+import com.dudencov.redditapp.di.modules.MainFragmentModule
 import com.dudencov.redditapp.presentation.notView.MainViewModel
 import com.dudencov.redditapp.presentation.notView.MainViewModelImpl
-import com.dudencov.redditapp.repository.RepositoryImpl
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment() {
 
-    lateinit var mainViewModel: MainViewModel
+    val mainViewModel: MainViewModel by lazy {
+        ViewModelProviders.of(activity!!, activity!!.injector.mainViewModelFactory())
+            .get(MainViewModelImpl::class.java)
+    }
+
+    var component: MainFragmentComponent? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,13 +35,21 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        mainViewModel = MainViewModelImpl(
-            App.instance,
-            TopListInteractor(RepositoryImpl(), DataAndModelTopListMapperImpl())
-        )
+        initDi()
 
         mainViewModel.topListLiveData.observe(this, Observer { tv.text = it.toString() })
     }
 
+    override fun onDestroy() {
+        component = null
+        super.onDestroy()
+    }
+
+    private fun initDi() {
+        component = DaggerMainFragmentComponent.builder()
+            .appComponent((activity as MainActivity).injector)
+            .mainFragmentModule(MainFragmentModule(activity as MainActivity))
+            .build()
+            .apply { inject(this@MainFragment) }
+    }
 }

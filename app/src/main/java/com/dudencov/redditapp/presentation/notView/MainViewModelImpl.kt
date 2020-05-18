@@ -7,9 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import com.dudencov.redditapp.data.ModelTopList
 import com.dudencov.redditapp.domain.TopListUseCases
 import io.reactivex.android.schedulers.AndroidSchedulers
+import javax.inject.Inject
 
-class MainViewModelImpl(cxt: Application, val topListUseCases: TopListUseCases) :
-    BaseViewModel(cxt), MainViewModel {
+class MainViewModelImpl @Inject constructor(
+    cxt: Application,
+    val topListUseCases: TopListUseCases
+) : BaseViewModel(cxt), MainViewModel {
 
     override var topListLiveData: LiveData<List<ModelTopList>> = MutableLiveData()
 
