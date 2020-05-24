@@ -1,4 +1,4 @@
-package com.dudencov.redditapp.presentation.view
+package com.dudencov.redditapp.presentation.view.activies
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

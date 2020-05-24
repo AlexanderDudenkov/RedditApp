@@ -2,7 +2,7 @@ package com.dudencov.redditapp.di.components
 
 import com.dudencov.redditapp.di.modules.MainFragmentModule
 import com.dudencov.redditapp.di.scopes.FragmentScope
-import com.dudencov.redditapp.presentation.view.MainFragment
+import com.dudencov.redditapp.presentation.view.fragments.MainFragment
 import dagger.Component
 
 @FragmentScope

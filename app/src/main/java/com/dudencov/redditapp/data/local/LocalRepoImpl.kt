@@ -1,4 +1,4 @@
-package com.dudencov.redditapp.repository.local
+package com.dudencov.redditapp.data.local
 
 import javax.inject.Inject
 

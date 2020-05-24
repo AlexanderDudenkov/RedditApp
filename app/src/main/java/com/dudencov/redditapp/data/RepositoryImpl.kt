@@ -1,7 +1,7 @@
-package com.dudencov.redditapp.repository
+package com.dudencov.redditapp.data
 
-import com.dudencov.redditapp.repository.local.LocalRepo
-import com.dudencov.redditapp.repository.remote.RemoteRepo
+import com.dudencov.redditapp.data.local.LocalRepo
+import com.dudencov.redditapp.data.remote.RemoteRepo
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(

@@ -2,7 +2,7 @@ package com.dudencov.redditapp.di.modules
 
 import com.dudencov.redditapp.BuildConfig
 import com.dudencov.redditapp.di.scopes.ApplicationScope
-import com.dudencov.redditapp.repository.remote.RedditApi
+import com.dudencov.redditapp.data.remote.RedditApi
 import com.dudencov.redditapp.util.Constants
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

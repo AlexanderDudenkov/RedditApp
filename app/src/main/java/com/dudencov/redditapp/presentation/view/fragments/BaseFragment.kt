@@ -1,4 +1,4 @@
-package com.dudencov.redditapp.presentation.view
+package com.dudencov.redditapp.presentation.view.fragments
 
 import androidx.fragment.app.Fragment
 

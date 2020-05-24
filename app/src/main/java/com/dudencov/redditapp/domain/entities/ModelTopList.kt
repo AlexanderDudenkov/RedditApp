@@ -1,4 +1,4 @@
-package com.dudencov.redditapp.data
+package com.dudencov.redditapp.domain.entities
 
 data class ModelTopList(
     val title: String,
@@ -7,5 +7,9 @@ data class ModelTopList(
     val postDateUtc: Long,
     val thumbnailUrl: String,
     val currentRating: Int,
-    val commentsNumber: Int
+    val commentsNumber: Int,
+
+    /**Using for pagination*/
+    val itemName: String,
+    val detailUrl:String
 )

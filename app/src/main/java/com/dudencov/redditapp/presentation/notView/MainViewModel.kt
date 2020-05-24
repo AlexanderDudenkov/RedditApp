@@ -1,8 +1,10 @@
 package com.dudencov.redditapp.presentation.notView
 
 import androidx.lifecycle.LiveData
-import com.dudencov.redditapp.data.ModelTopList
+import androidx.paging.PagedList
+import com.dudencov.redditapp.presentation.view.adapters.TopListUiModel
 
 interface MainViewModel {
-    var topListLiveData: LiveData<List<ModelTopList>>
+    val topListUiLiveData: LiveData<PagedList<TopListUiModel>>?
+    val mainProgressBarVisibility: LiveData<Boolean>
 }

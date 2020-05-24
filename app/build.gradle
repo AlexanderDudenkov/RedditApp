@@ -35,8 +35,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
 
     testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "com.android.support.test:runner:$runnerVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //okhttp3
     implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
@@ -56,14 +56,24 @@ dependencies {
     implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding2Version"
 
     //Navigation
-    implementation "android.arch.navigation:navigation-fragment:$navVersion"
-    implementation "android.arch.navigation:navigation-ui:$navVersion"
+    implementation 'androidx.navigation:navigation-fragment:2.3.0-beta01'
+    implementation 'androidx.navigation:navigation-ui:2.3.0-beta01'
 
     //dagger2
     implementation "com.google.dagger:dagger:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
     //Lifecycle
-    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
-    annotationProcessor "android.arch.lifecycle:compiler:$lifecycleVersion"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.2.0'
+
+    //Paging lib.
+    implementation 'androidx.paging:paging-runtime:2.1.2'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Chrome Tabs
+    //noinspection GradleCompatible
+    implementation 'com.android.support:customtabs:28.0.0'
 }

@@ -1,4 +1,4 @@
-package com.dudencov.redditapp.repository.remote.models
+package com.dudencov.redditapp.data.remote.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -37,7 +37,13 @@ data class ChildData(
     val thumbnail: String,
 
     @SerializedName("created_utc")
-    val created_utc: Long
+    val created_utc: Long,
+
+    @SerializedName("name")
+    val itemName: String,
+
+    @SerializedName("url")
+    val detailUrl: String
 )
 
 

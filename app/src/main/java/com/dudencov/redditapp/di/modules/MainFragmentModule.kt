@@ -2,7 +2,7 @@ package com.dudencov.redditapp.di.modules
 
 import android.content.Context
 import com.dudencov.redditapp.di.scopes.FragmentScope
-import com.dudencov.redditapp.presentation.view.MainActivity
+import com.dudencov.redditapp.presentation.view.activies.MainActivity
 import dagger.Module
 import dagger.Provides
 
