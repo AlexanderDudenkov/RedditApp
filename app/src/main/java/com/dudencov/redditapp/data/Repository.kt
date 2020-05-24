@@ -1,9 +1,9 @@
 package com.dudencov.redditapp.data
 
-import com.dudencov.redditapp.data.local.LocalRepo
-import com.dudencov.redditapp.data.remote.RemoteRepo
+import com.dudencov.redditapp.data.remote.models.RequestModelTopList
+import com.dudencov.redditapp.domain.entities.ModelTopList
+import io.reactivex.Single
 
 interface Repository {
-    val localRepo: LocalRepo
-    val remoteRepo: RemoteRepo
+    fun getTopModelData(model: RequestModelTopList): Single<List<ModelTopList>>
 }

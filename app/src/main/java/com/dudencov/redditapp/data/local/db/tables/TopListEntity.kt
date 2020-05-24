@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "TopListTable")
-data class TopListTable(
+data class TopListEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0,
 

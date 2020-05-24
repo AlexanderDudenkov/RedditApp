@@ -2,6 +2,7 @@ package com.dudencov.redditapp.presentation.notView
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
@@ -14,6 +15,7 @@ import com.dudencov.redditapp.presentation.view.adapters.TopListUiModel
 import com.dudencov.redditapp.util.createConfig
 import com.dudencov.redditapp.util.createDataSourceFactory
 import com.dudencov.redditapp.util.getTimeAgo
+import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.*
 import java.util.concurrent.Executors
 import javax.inject.Inject
@@ -87,12 +89,17 @@ class MainViewModelImpl @Inject constructor(
                     key = rawList.last().itemName
                     mapperCallback(rawList)
                 }
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { uiList ->
                         Log.d(javaClass.simpleName, uiList.toString())
                         resultCallback(uiList, key)
                     },
-                    { Log.d(javaClass.simpleName, it.message ?: "error") }
+                    {
+                        Log.d(javaClass.simpleName, it.message ?: "error")
+                        Toast.makeText(getApplication(), it.message, Toast.LENGTH_LONG).show()
+                        (mainProgressBarVisibility as MutableLiveData).value = false
+                    }
                 )
         )
     }

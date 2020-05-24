@@ -4,9 +4,9 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.dudencov.redditapp.data.local.db.AppDatabase.Companion.VERSION
 import com.dudencov.redditapp.data.local.db.dao.TopListDao
-import com.dudencov.redditapp.data.local.db.tables.TopListTable
+import com.dudencov.redditapp.data.local.db.tables.TopListEntity
 
-@Database(entities = [TopListTable::class], version = VERSION)
+@Database(entities = [TopListEntity::class], version = VERSION)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getTopListDao(): TopListDao
