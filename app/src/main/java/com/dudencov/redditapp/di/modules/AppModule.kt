@@ -10,13 +10,14 @@ import com.dudencov.redditapp.data.Repository
 import com.dudencov.redditapp.data.RepositoryImpl
 import com.dudencov.redditapp.data.local.LocalRepo
 import com.dudencov.redditapp.data.local.LocalRepoImpl
+import com.dudencov.redditapp.data.local.db.AppDatabase
 import com.dudencov.redditapp.data.remote.RedditApi
 import com.dudencov.redditapp.data.remote.RemoteRepo
 import com.dudencov.redditapp.data.remote.RemoteRepoImpl
 import dagger.Module
 import dagger.Provides
 
-@Module(includes = [NetModule::class, MapperModule::class])
+@Module(includes = [NetModule::class, MapperModule::class, RoomModule::class])
 class AppModule {
 
     @Provides
@@ -37,7 +38,7 @@ class AppModule {
 
     @Provides
     @ApplicationScope
-    fun provideLocalRepo(): LocalRepo = LocalRepoImpl()
+    fun provideLocalRepo(db: AppDatabase): LocalRepo = LocalRepoImpl(db)
 
     @Provides
     @ApplicationScope
