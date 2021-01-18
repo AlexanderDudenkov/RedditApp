@@ -31,13 +31,13 @@ data class ChildData(
     val score: Int,
 
     @SerializedName("num_comments")
-    val num_comments: Int,
+    val numComments: Int,
 
     @SerializedName("thumbnail")
     val thumbnail: String,
 
     @SerializedName("created_utc")
-    val created_utc: Long,
+    val createdUtc: Long,
 
     @SerializedName("name")
     val itemName: String,

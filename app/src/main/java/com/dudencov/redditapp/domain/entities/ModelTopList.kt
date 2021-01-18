@@ -11,5 +11,5 @@ data class ModelTopList(
 
     /**Using for pagination*/
     val itemName: String,
-    val detailUrl:String
+    val detailUrl: String
 )
