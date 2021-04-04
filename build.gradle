@@ -24,15 +24,15 @@ ext {
     pagingVersion = '2.1.2'
     daggerVersion = '2.24'
     roomVersion = '1.1.1'
-    room_rxjava2Version = '2.2.5'
+    room_rxjava2Version = '2.2.6'
     customtabsVersion = '28.0.0'
     picassoVersion = '2.71828'
 }
 
 buildscript {
-    ext.kotlin_version = '1.3.70'//'1.4.21'
-    ext.buildGradleVersion = '3.2.0'//'4.1.1'
-    ext.navigationVersion = '2.3.2'
+    ext.kotlin_version = '1.3.72'
+    ext.buildGradleVersion = '4.1.3'
+    ext.navigationVersion = '2.3.4'
 
     repositories {
         google()
